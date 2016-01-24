@@ -2,4 +2,4 @@
 Electron development
 
 ### Refarence
-(Electronでアプリケーションを作ってみよう)[http://qiita.com/Quramy/items/a4be32769366cfe55778]
+[Electronでアプリケーションを作ってみよう](http://qiita.com/Quramy/items/a4be32769366cfe55778)
