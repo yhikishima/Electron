@@ -4,6 +4,10 @@ const React = require("react");
 
 class MyApp extends React.Component {
   render() {
-    return <h1>React in Electron!</h1>;
+    return (
+      React.createElement('div', {className: "commentBox"},
+        "Hello, world! I am a CommentBox."
+      )
+    );
   }
 }

@@ -7,14 +7,25 @@
   <body>
     <h1>しゃ頑張るかい</h1>
     <button id="myButton">ボタン</button>
+    <div id="root-dom"></div>
     <script>
       require("babel-register")({plugins: "transform-react-jsx"});
       const React = require("react");
       const ReactDOM = require("react-dom");
-      const MyApp = require("./my-app");
+      // const MyApp = require("./my-app");
+
+      var CommentBox = React.createClass({displayName: 'CommentBox',
+        render: function() {
+          return (
+            React.createElement('div', {className: "commentBox"},
+              "Hello, world! I am a CommentBox."
+            )
+          );
+        }
+      });
 
       const rootDOM = document.getElementById("root-dom");
-      ReactDOM.render(React.createElement(MyApp), rootDOM);
+      ReactDOM.render(React.createElement(CommentBox, null), rootDOM);
     </script>
   </body>
 </html>
