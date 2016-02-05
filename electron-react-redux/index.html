@@ -12,20 +12,30 @@
       require("babel-register")({plugins: "transform-react-jsx"});
       const React = require("react");
       const ReactDOM = require("react-dom");
-      // const MyApp = require("./my-app");
+      const MyApp = require("./my-app");
 
       var CommentBox = React.createClass({displayName: 'CommentBox',
         render: function() {
           return (
-            React.createElement('div', {className: "commentBox"},
-              "Hello, world! I am a CommentBox."
-            )
+            <div>Hello {this.props.name}</div>
           );
+        },
+
+        _onClick: function() {
+          ipcRenderer.send("dispatch-store", {
+            type: "COUNT_UP"
+          });
         }
+
+
       });
 
       const rootDOM = document.getElementById("root-dom");
-      ReactDOM.render(React.createElement(CommentBox, null), rootDOM);
+      ReactDOM.render(React.createElement(MyApp, null), rootDOM);
+
+      // ipcRenderer.on("render", (sender, state) => {
+      //   ReactDOM.render(React.createElement(MyApp, state), rootDOM);
+      // });
     </script>
   </body>
 </html>
